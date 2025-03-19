@@ -1,6 +1,5 @@
 # 用于评价的贴表情规则
 from typing import Any, Coroutine
-from ..message_handler import MessageHandler
 from astrbot.api.event import AstrMessageEvent
 
 class Rule:
@@ -39,13 +38,4 @@ class GoodEmojiRule(Rule):
         Returns:
             bool: 是否应该被转发
         """
-        message_handler = MessageHandler(event)
-        emoji_count_dict = await message_handler.fetch_emoji_like(message_id)
-        good_emoji_count = 0
-        bad_emoji_count = 0
-        for emoji_id, emoji_count in emoji_count_dict.items():
-            if emoji_id in self.good_emoji_ids:
-                good_emoji_count += emoji_count
-            elif emoji_id in self.bad_emoji_ids:
-                bad_emoji_count += emoji_count
-        return good_emoji_count >= bad_emoji_count
+        return True

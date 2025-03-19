@@ -4,7 +4,6 @@ from astrbot.api.all import *
 from astrbot.core.platform.sources.aiocqhttp.aiocqhttp_message_event import AiocqhttpMessageEvent
 from astrbot.core.star.filter.platform_adapter_type import PlatformAdapterType
 from .core.forward_manager import ForwardManager
-from .core.message_handler import MessageHandler
 from .core.evaluation.evaluator import Evaluator
 from .core.evaluation.rules import GoodEmojiRule
 from .storage.local_cache import LocalCache
